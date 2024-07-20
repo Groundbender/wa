@@ -5,5 +5,4 @@ export const PageWrapper = styled.div`
   height: 100%;
   background: var(--bg-color);
   transition: var(--transition-theme);
-
 `

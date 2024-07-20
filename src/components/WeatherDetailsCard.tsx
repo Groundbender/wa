@@ -7,6 +7,7 @@ interface WeatherDetailsCardProps {
   icon: JSX.Element
   measureUnit: string
 }
+
 export const WeatherDetailsCard: FC<WeatherDetailsCardProps> = ({ weatherDataText, weatherDataValue, icon, measureUnit }) => {
   return (
     <DetailsCard>

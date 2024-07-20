@@ -2,7 +2,6 @@ import { FC } from "react"
 import { TemperatureUnit } from "@/types"
 import { SwitcherBlock, SwitcherBtn } from "@/ui/TemperatureUnitSwitcher"
 
-
 interface TemperatureUnitSwitcherProps {
   handleSwitchTemperatureUnit: (unit: TemperatureUnit) => void
   temperatureUnit: TemperatureUnit

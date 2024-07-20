@@ -34,4 +34,4 @@ export const DetailsInfo = styled.div`
 export const DetailsInfoValue = styled.p`
   font-size: var(--font-size-34);
   font-weight: var(--font-weight-medium);
-  `
+`

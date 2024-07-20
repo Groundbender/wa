@@ -25,6 +25,7 @@ export const DateBlock = styled.div`
     gap: 0;
   }
 `
+
 export const DateTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,14 +33,12 @@ export const DateTextWrapper = styled.div`
   color: var(--primary-color);
   font-size: var(--font-size-25);
   align-items: center;
-
- 
 `
 
 export const WeatherTitle = styled.h1`
   color: var(--primary-color);
   font-size: var(--font-size-90)
-  `
+ `
 
 export const GeolocationBlock = styled.div`
   font-size: var(--font-size-26);
@@ -58,8 +57,7 @@ export const GeolocationBlock = styled.div`
       margin-right: .3125rem;
     }
   }
-
-  `
+`
 
 
 

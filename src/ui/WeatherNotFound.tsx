@@ -13,14 +13,14 @@ const NotFoundContainer = styled.div`
 `
 
 const NotFoundImage = styled(Image)`
-    width: clamp(10rem, 4.1262rem + 9.0615vw, 15rem);
-    aspect-ratio: 1;
-    object-fit: cover;
-    margin-bottom: 6.25rem;
+  width: clamp(10rem, 4.1262rem + 9.0615vw, 15rem);
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: 6.25rem;
 
-    @media(max-width: 500px) {
-      margin-bottom: 3.125rem;
-    }
+  @media(max-width: 500px) {
+    margin-bottom: 3.125rem;
+  }
   `
 
 const NotFoundText = styled(Text)`
