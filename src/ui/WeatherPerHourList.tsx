@@ -8,6 +8,5 @@ export const StyledWeatherPerHourList = styled.ul`
     flex-wrap: wrap;
     justify-content: center;
    }
-   
 `
 

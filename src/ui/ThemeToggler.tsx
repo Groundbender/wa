@@ -37,6 +37,6 @@ export const ThemeTogglerBall = styled.span`
   top: .125rem;
   border-radius: 50%;
   transition: left 0.2s linear;
-  `
+`
 
 

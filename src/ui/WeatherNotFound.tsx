@@ -21,11 +21,11 @@ const NotFoundImage = styled(Image)`
   @media(max-width: 500px) {
     margin-bottom: 3.125rem;
   }
-  `
+`
 
 const NotFoundText = styled(Text)`
     margin-bottom: .625rem;
-  `
+`
 
 export const WeatherNotFound = () => {
   return (
