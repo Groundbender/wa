@@ -30,7 +30,6 @@ const App = () => {
       return
     }
     if (debouncedValue.trim()) {
-      console.log("debouncedValue", debouncedValue);
       dispatch(fetchWeatherDataBySearchAction({
         location: debouncedValue,
         temperatureUnit,
@@ -42,20 +41,7 @@ const App = () => {
         temperatureUnit,
       }))
     }
-
-
   }, [position, temperatureUnit, debouncedValue])
-
-  // useEffect(() => {
-  //   if (!debouncedValue.trim()) {
-  //     return
-  //   }
-  //   dispatch(fetchWeatherDataBySearchAction({
-  //     location: debouncedValue,
-  //     temperatureUnit,
-  //     position
-  //   }))
-  // }, [debouncedValue])
 
   const handleSearchValue = useCallback((value: string) => {
     setSearchValue(value)
