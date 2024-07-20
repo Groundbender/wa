@@ -16,7 +16,6 @@ const SwitchersContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  
 `
 
 export const HeaderWidget: FC<HeaderWidgetProps> = ({ handleSwitchTemperatureUnit, temperatureUnit, handleSearchValue }) => {

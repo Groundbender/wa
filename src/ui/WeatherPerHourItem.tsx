@@ -22,13 +22,13 @@ export const WeatherCapsule = styled.div<{ $now?: boolean }>`
   background-color: ${props => props.$now ? "var(--primary-color-muted)" : "var(--weather-item-bg)"};
   color: ${props => props.$now ? "var(--primary-color)" : "var(--primary-color-muted)"};
   
- @media (max-width: 1060px) {
-  padding: 0 .625rem;
-  height: 6.5rem;
+  @media (max-width: 1060px) {
+   padding: 0 .625rem;
+   height: 6.5rem;
 }
 
- @media (max-width: 500px) {
-  height: 5.5rem;
+  @media (max-width: 500px) {
+   height: 5.5rem;
 }
 `
 
