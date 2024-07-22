@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
 import  createSagaMiddleware  from 'redux-saga'
-import { watcherWeatherData } from './sagas/workerFetchWeatherData'
 import { rootWatcher } from './sagas/rootWatcher'
 import weatherReducer from './slices/weatherSlice'
 
@@ -14,7 +13,6 @@ export const store = configureStore({
 })
 
 sagaMiddleware.run(rootWatcher)
-
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

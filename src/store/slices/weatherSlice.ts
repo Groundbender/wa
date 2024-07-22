@@ -1,6 +1,7 @@
 import { CurrentWeather, ResponseStatus, WeatherCondition, WeatherPerHour } from '@/types'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+
 interface WeatherData {
   timezone: string
   weatherPerHour: WeatherPerHour[] | null
