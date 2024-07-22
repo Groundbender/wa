@@ -20,7 +20,6 @@ export const StyledInput = styled.input`
       display: none;
     }
     
-
   &::placeholder {
     color: var(--primary-color);
   }

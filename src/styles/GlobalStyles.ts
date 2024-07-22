@@ -91,6 +91,7 @@ ul {
     font-size: 14px;
   }
 }
+
 @media (max-width: 720px) {
   html {
     font-size: 12px;
