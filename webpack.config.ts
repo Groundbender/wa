@@ -2,7 +2,6 @@ import  path from 'path';
 import webpack, { DefinePlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ReactRefreshTypeScript from "react-refresh-typescript";
 import dotenv from 'dotenv';
@@ -17,7 +16,7 @@ export default  {
       clean: true
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }), 
+      new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html'), favicon: path.resolve(__dirname, 'public', 'favicon.png') }), 
       new webpack.ProgressPlugin(),
       new ReactRefreshWebpackPlugin(),
       new DefinePlugin({
