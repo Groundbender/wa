@@ -5,7 +5,6 @@ import { API_KEY } from "@/const/const";
 import { putWeatherData, setWeatherError, setWeatherLoading } from "../slices/weatherSlice";
 import { fetchWeatherData } from "@/api/api";
 
-
 export const fetchWeatherDataAction = createAction<WeatherWorkersPayload>(WeatherActionTypes.FETCH_WEATHER_DATA);
 
 export function* workerFetchWeatherData(action: PayloadAction<WeatherWorkersPayload>) {
