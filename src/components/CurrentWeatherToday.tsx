@@ -1,4 +1,4 @@
-import { CurrentWeatherContainer, DateBlock, WeatherTitle, DateTextWrapper, GeolocationBlock } from "@/ui/CurrentWeather"
+import { CurrentWeatherContainer, DateBlock, WeatherTitle, DateTextContainer, GeolocationBlock } from "@/ui/CurrentWeather"
 import LocationIcon from "@/assets/Location.svg"
 import { FC } from "react"
 import { Text } from "@/ui/Text"
@@ -7,9 +7,8 @@ import styled from "styled-components"
 import { getTodaysDayOfWeek } from "@/helpers"
 
 const CurrentWeatherIcon = styled(Image)`
-    width: clamp(3.125rem, 2.3665rem + 3.2362vw, 6.25rem);
-    aspect-ratio: 1;
-`
+    width: var(--icon-size-lg);`
+
 interface CurrentWeatherProps {
   weatherIcon: string
   temperature: number
@@ -20,10 +19,10 @@ export const CurrentWeather: FC<CurrentWeatherProps> = ({ weatherIcon, temperatu
   return (
     <CurrentWeatherContainer>
       <DateBlock>
-        <DateTextWrapper>
+        <DateTextContainer>
           <Text size={25}>Today</Text>
           <Text size={15}>{getTodaysDayOfWeek()}</Text>
-        </DateTextWrapper>
+        </DateTextContainer>
         <CurrentWeatherIcon src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`} alt="Current weather icon" />
       </DateBlock>
       <WeatherTitle>

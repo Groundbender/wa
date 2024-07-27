@@ -6,10 +6,9 @@ export const StyledWeatherPerHourItem = styled.li`
   flex-direction: column;
   gap: .9375rem; 
   align-items: center;
-  color: var(--primary-color);
-`
+  color: var(--primary-color);`
 
-export const WeatherCapsule = styled.div<{ $now?: boolean }>`
+export const WeatherPerHourCard = styled.div<{ $now?: boolean }>`
   background-color: var(--weather-item-bg);
   height: 7.5rem;
   padding: 0 .9375rem;
@@ -29,11 +28,8 @@ export const WeatherCapsule = styled.div<{ $now?: boolean }>`
 
   @media (max-width: 500px) {
    height: 5.5rem;
-}
-`
+}`
 
 export const WeatherPerHourIcon = styled(Image)`
-  width: clamp(2.1875rem, 1.96rem + 0.9709vw, 3.125rem);
-  aspect-ratio: 1;
-`
-
+  width: var(--icon-size-sm);
+  aspect-ratio: 1;`

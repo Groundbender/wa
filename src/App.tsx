@@ -1,12 +1,9 @@
 import { GlobalStyles } from "./styles/GlobalStyles"
-import { useCallback, useEffect, useState } from "react"
-import { useGeolocation } from "./hooks/useGeolocation"
-import { useDebounce } from "./hooks/useDebounce"
-import { useAppDispatch, useAppSelector } from "./hooks/redux"
+import { useEffect, useState } from "react"
+import { useAppSelector, useDebounce, useGeolocation } from "./hooks"
 import { fetchWeatherDataAction } from "./store/sagas/workerFetchWeatherData"
-import { fetchWeatherDataBySearchAction } from "./store/sagas/workerFetchWeatherDataBySearch"
 import { WeatherLoader } from "./ui/WeatherLoader"
-import { DarkModeProvider } from "./context/darkMode/DarkModeProvider"
+import { ThemeProvider } from "./context/themeContext/ThemeProvider"
 import { HeaderWidget } from "./widgets/HeaderWidget"
 import { WeatherDetailsWidget } from "./widgets/WeatherDetailsWidget"
 import { WeatherTodayWidget } from "./widgets/WeatherTodayWidget"
@@ -14,51 +11,41 @@ import { Divider } from "./ui/Divider"
 import { PageWrapper } from "./ui/PageWrapper"
 import { Container } from "./ui/Container"
 import { WeatherNotFound } from "./ui/WeatherNotFound"
-import { TemperatureUnit } from "./types"
+import { TemperatureUnit } from "./types/weather"
+import { Toaster } from "react-hot-toast"
+import { useDispatch } from "react-redux"
 
 const App = () => {
-  const { currentPosition: position } = useGeolocation();
+  const { currentPosition } = useGeolocation();
+
   const [temperatureUnit, setTemperatureUnit] = useState<TemperatureUnit>("metric")
   const [searchValue, setSearchValue] = useState("");
-  const debouncedValue = useDebounce(searchValue)
 
-  const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
   const status = useAppSelector(state => state.weather.status)
 
+  const debouncedValue = useDebounce(searchValue)
+
   useEffect(() => {
-    if (!position) {
-      return
-    }
-    if (debouncedValue.trim()) {
-      dispatch(fetchWeatherDataBySearchAction({
-        location: debouncedValue,
-        temperatureUnit,
-        position
-      }))
-    } else {
-      dispatch(fetchWeatherDataAction({
-        position,
-        temperatureUnit,
-      }))
-    }
-  }, [position, temperatureUnit, debouncedValue])
+    if (!currentPosition) return
+    if (debouncedValue.trim()) return
 
-  const handleSearchValue = useCallback((value: string) => {
-    setSearchValue(value)
-  }, [])
-
-  const handleSwitchTemperatureUnit = useCallback((unit: TemperatureUnit) => {
-    setTemperatureUnit(unit)
-  }, [temperatureUnit])
+    dispatch(fetchWeatherDataAction({
+      position: currentPosition,
+      temperatureUnit,
+    }))
+  }, [currentPosition, temperatureUnit, debouncedValue, dispatch])
 
   return (
-    <DarkModeProvider>
+    <ThemeProvider>
       <GlobalStyles />
       <PageWrapper>
         <Container>
           <HeaderWidget
-            handleSearchValue={handleSearchValue}
-            handleSwitchTemperatureUnit={handleSwitchTemperatureUnit} temperatureUnit={temperatureUnit} />
+            debouncedValue={debouncedValue}
+            setSearchValue={setSearchValue}
+            currentPosition={currentPosition}
+            setTemperatureUnit={setTemperatureUnit} temperatureUnit={temperatureUnit} />
           {status === "error" &&
             <WeatherNotFound />}
           {status === "loading" && <WeatherLoader />}
@@ -70,7 +57,23 @@ const App = () => {
             </>}
         </Container>
       </PageWrapper>
-    </DarkModeProvider>
+      <Toaster
+        position="bottom-right"
+        gutter={12}
+        toastOptions={{
+          error: {
+            duration: 3000,
+          },
+          style: {
+            fontSize: "var(--font-size-16)",
+            maxWidth: "18rem",
+            padding: "1rem 1.5rem ",
+            background: "var(--primary-color)",
+            color: "var(--secondary-color)",
+          }
+        }}
+      />
+    </ThemeProvider>
   )
 }
 

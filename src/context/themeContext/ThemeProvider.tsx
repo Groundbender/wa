@@ -1,12 +1,12 @@
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { FC, useCallback, useEffect, useMemo } from "react";
-import { DarkModeContext } from "./DarkModeContext";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { ThemeContext } from "./ThemeContext";
 
-interface DarkModeProviderProps {
+interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
-export const DarkModeProvider: FC<DarkModeProviderProps> = ({ children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useLocalStorage(
     window.matchMedia("(prefers-color-scheme: dark)").matches,
     "isDarkMode"
@@ -32,8 +32,8 @@ export const DarkModeProvider: FC<DarkModeProviderProps> = ({ children }) => {
   }), [isDarkMode, toggleDarkMode]);
 
   return (
-    <DarkModeContext.Provider value={memoizedContext}>
+    <ThemeContext.Provider value={memoizedContext}>
       {children}
-    </DarkModeContext.Provider>
+    </ThemeContext.Provider>
   );
 };

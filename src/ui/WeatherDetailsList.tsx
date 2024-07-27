@@ -11,5 +11,4 @@ export const DetailsList = styled.ul`
   
   @media(max-width: 500px) {
     grid-template-columns: repeat(2, 1fr);
-  }
-`
+  }`

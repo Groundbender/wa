@@ -7,6 +7,4 @@ export const StyledWeatherPerHourList = styled.ul`
    @media(max-width: 580px) {
     flex-wrap: wrap;
     justify-content: center;
-   }
-`
-
+   }`

@@ -26,8 +26,3 @@ export function* workerFetchWeatherData(action: PayloadAction<WeatherWorkersPayl
 export function* watcherWeatherData() {
   yield takeEvery(WeatherActionTypes.FETCH_WEATHER_DATA, workerFetchWeatherData);
 }
-
-
-
-
-

@@ -13,8 +13,7 @@ export const CurrentWeatherContainer = styled.div`
 
   @media(max-width: 500px) {
     gap: 1rem;
-  }
-`
+  }`
 
 export const DateBlock = styled.div`
   display: flex;
@@ -23,22 +22,19 @@ export const DateBlock = styled.div`
 
   @media(max-width: 1060px) {
     gap: 0;
-  }
-`
+  }`
 
-export const DateTextWrapper = styled.div`
+export const DateTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: .4375rem;
   color: var(--primary-color);
   font-size: var(--font-size-25);
-  align-items: center;
-`
+  align-items: center;`
 
 export const WeatherTitle = styled.h1`
   color: var(--primary-color);
-  font-size: var(--font-size-90)
- `
+  font-size: var(--font-size-90)`
 
 export const GeolocationBlock = styled.div`
   font-size: var(--font-size-26);
@@ -56,8 +52,4 @@ export const GeolocationBlock = styled.div`
     svg {
       margin-right: .3125rem;
     }
-  }
-`
-
-
-
+  }`

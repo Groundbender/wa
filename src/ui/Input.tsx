@@ -22,10 +22,9 @@ export const StyledInput = styled.input`
     
   &::placeholder {
     color: var(--primary-color);
-  }
-`
+  }`
 
-export const InputBlock = styled.div<InputProps>`
+export const InputContainer = styled.div<InputProps>`
   width: 70%;
   height: 30px;
   background: inherit;
@@ -50,9 +49,9 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> { }
 
 export const Input: FC<InputProps> = (props) => {
   return (
-    <InputBlock type={props.type} >
+    <InputContainer type={props.type} >
       <StyledInput {...props} />
       <SearchIcon />
-    </InputBlock>
+    </InputContainer>
   )
 }

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { StyledWeatherPerHourItem, WeatherCapsule, WeatherPerHourIcon } from "@/ui/WeatherPerHourItem";
+import { StyledWeatherPerHourItem, WeatherPerHourCard, WeatherPerHourIcon } from "@/ui/WeatherPerHourItem";
 import { Text } from "@/ui/Text";
 import { checkCurrentTime, formatTimeUS } from "@/helpers";
 
@@ -15,10 +15,10 @@ export const WeatherPerHourItem: FC<WeatherPerHourItemProps> = ({ time, temperat
       <Text size={12}>
         {formatTimeUS(time)}
       </Text>
-      <WeatherCapsule $now={checkCurrentTime(time)}>
+      <WeatherPerHourCard $now={checkCurrentTime(time)}>
         <WeatherPerHourIcon src={`https://openweathermap.org/img/wn/${weatherIcon}.png`} alt="Weather icon" />
         {temperature}°
-      </WeatherCapsule>
+      </WeatherPerHourCard>
     </StyledWeatherPerHourItem>
   )
 }

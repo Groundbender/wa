@@ -16,15 +16,11 @@ export const SwitcherBlock = styled.div`
 
   @media(max-width: 500px) {
     width: 6rem;
-  }
-`
+  }`
 
-export const SwitcherBtn = styled.button<{ $activeUnit?: boolean }>`
-    background: transparent;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    color: ${(props) => props.$activeUnit ? "var(--text-active-color)" : "var(--text-inactive-color)"};
-`
-
-
+export const TemperatureUnitSwitcherBtn = styled.button<{ $activeUnit?: boolean }>`
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: ${(props) => props.$activeUnit ? "var(--text-active-color)" : "var(--text-inactive-color)"};`

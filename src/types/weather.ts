@@ -10,18 +10,14 @@ export type PosistionCoordinates = {
 export  type ResponseStatus = 'idle' | 'loading' | 'error'
 
 export interface CurrentWeather {
-  clouds: number;
   dew_point: number;
-  dt: number;
   feels_like: number;
   humidity: number;
   pressure: number;
   sunrise: number;
   sunset: number;
   temp: number;
-  uvi: number;
   visibility: number;
-  wind_deg: number;
   wind_speed: number;
   weather: WeatherCondition[]
 }
@@ -39,10 +35,10 @@ export interface WeatherPerHour {
   weather: WeatherCondition[]
 }
 
-export interface DetailsContent {
+export interface WeatherDetailCard {
   title: string;
   value: keyof Omit<CurrentWeather, "weather">;
   icon: ReactElement;
-  measureUnit: string;
+  measureUnit?: string;
   isTimestamp: boolean;
 }

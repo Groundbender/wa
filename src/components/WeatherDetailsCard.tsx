@@ -1,20 +1,20 @@
 import { DetailsCard, DetailsInfo, DetailsInfoValue, DetailsTitle } from "@/ui/WeatherDetailsCard"
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 
 interface WeatherDetailsCardProps {
-  weatherDataText: string,
-  weatherDataValue: string,
-  icon: JSX.Element
+  weatherDetailTitle: string,
+  weatherDetailValue: string,
+  icon: ReactNode
   measureUnit: string
 }
 
-export const WeatherDetailsCard: FC<WeatherDetailsCardProps> = ({ weatherDataText, weatherDataValue, icon, measureUnit }) => {
+export const WeatherDetailsCard: FC<WeatherDetailsCardProps> = ({ weatherDetailTitle, weatherDetailValue, icon, measureUnit }) => {
   return (
     <DetailsCard>
-      <DetailsTitle>{weatherDataText}</DetailsTitle>
+      <DetailsTitle>{weatherDetailTitle}</DetailsTitle>
       <DetailsInfo>
         <DetailsInfoValue>
-          {weatherDataValue} {measureUnit}
+          {weatherDetailValue} {measureUnit}
         </DetailsInfoValue>
         {icon}
       </DetailsInfo>

@@ -11,5 +11,4 @@ export const Text = styled.p<TextProps>`
   font-style: var(--font-style-normal);
   font-size: 1rem;
   font-size: var(--${props => "font-size-" + props.size});
-  color: var(--primary-color);
-`
+  color: var(--primary-color);`

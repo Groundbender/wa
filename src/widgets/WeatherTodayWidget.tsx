@@ -18,8 +18,7 @@ const WeatherTodayContainer = styled.div`
 
   @media(max-width: 720px) {
     padding-bottom: 3rem;
-  }
-`
+  }`
 
 export const WeatherTodayWidget = () => {
   const timezone = useAppSelector(state => state.weather.weatherData?.timezone)

@@ -7,8 +7,7 @@ export const DetailsCard = styled.li`
 
   @media (max-width: 1060px) {
     padding: 1.5rem 1rem;
-  }
-`
+  }`
 
 export const DetailsTitle = styled.h5`
   text-transform: var(--text-uppercase);
@@ -16,8 +15,7 @@ export const DetailsTitle = styled.h5`
   font-weight: var(--font-weight-medium);
   margin-bottom: 1.2rem;
   color: var(--color-secondary);
-  opacity: 0.6;
-`
+  opacity: 0.6;`
 
 export const DetailsInfo = styled.div`
   display: flex;
@@ -25,13 +23,11 @@ export const DetailsInfo = styled.div`
   align-items: center;
 
   svg {
-    font-size: clamp(1.25rem, 0.7949rem + 1.9417vw, 3.125rem);
+    font-size: var(--icon-size-md);
     aspect-ratio: 1;
     fill: var(--color-secondary);
-  }
-`
+  }`
 
 export const DetailsInfoValue = styled.p`
   font-size: var(--font-size-34);
-  font-weight: var(--font-weight-medium);
-`
+  font-weight: var(--font-weight-medium);`

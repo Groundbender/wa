@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-
+import normalize from "./normalize.css"
 export const GlobalStyles = createGlobalStyle`
+  ${normalize}
   :root {
   &.light-mode {
     --bg-color: transparent linear-gradient(180deg, #20d1bc 0%, #1aade3 100%) 0%
@@ -52,19 +53,17 @@ export const GlobalStyles = createGlobalStyle`
 
   --text-uppercase: uppercase;
 
+  --icon-size-lg: clamp(3.125rem, 2.3665rem + 3.2362vw, 6.25rem);
+  --icon-size-md: clamp(1.25rem, 0.7949rem + 1.9417vw, 3.125rem);
+  --icon-size-sm: clamp(2.1875rem, 1.96rem + 0.9709vw, 3.125rem);
+  
+  --not-found-image-size: clamp(10rem, 4.1262rem + 9.0615vw, 15rem);
+
   --transition-theme: color 0.3s, background-color 0.3s;
 }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
+ 
 @font-face {
-  src: url("../assets/fonts/HelveticaFont.woff") format("woff");
+  src: url("../assets/fonts/HelveticaFont.woff2") format("woff2");
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
   font-style: var(--font-style-normal);
@@ -74,15 +73,6 @@ export const GlobalStyles = createGlobalStyle`
 body {
   font-family: var(--font-family);
   transition: var(--transition-theme);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
 }
 
 @media (max-width: 1200px) {
@@ -95,10 +85,4 @@ ul {
   html {
     font-size: 12px;
   }
-}
-
-
-
- 
-  
-`
+}`

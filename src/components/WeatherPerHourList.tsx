@@ -1,4 +1,4 @@
-import { WeatherPerHour } from "@/types"
+import { WeatherPerHour } from "@/types/weather"
 import { StyledWeatherPerHourList } from "@/ui/WeatherPerHourList"
 import { FC } from "react"
 import { WeatherPerHourItem } from "./WeatherPerHoutItem"

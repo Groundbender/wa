@@ -1,17 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const DEFAULT_DEBOUNCE_MS = 500
 
-export const useDebounce = (value: string, ms: number = DEFAULT_DEBOUNCE_MS ) => {
+export const useDebounce = <T>(value: T, ms: number = DEFAULT_DEBOUNCE_MS ): T => {
   const [debouncedValue, setDebouncedValue] = useState(value);
-  const timerRef = useRef<NodeJS.Timeout>()
 
   useEffect(() => {
-    timerRef.current = setTimeout(() => {
+    const timerId = setTimeout(() => {
       setDebouncedValue(value)
     }, ms)
 
-    return () => clearTimeout(timerRef.current)
+    return () => clearTimeout(timerId)
   }, [value, ms])
 
   return debouncedValue

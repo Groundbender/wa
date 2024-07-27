@@ -1,11 +1,11 @@
-import { CurrentWeather, ResponseStatus, WeatherCondition, WeatherPerHour } from '@/types'
+import { CurrentWeather, ResponseStatus, WeatherCondition, WeatherPerHour } from '@/types/weather'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface WeatherData {
   timezone: string
   weatherPerHour: WeatherPerHour[] | null
-  weatherDetails: CurrentWeather  | null
+  weatherDetails: Omit<CurrentWeather, "weather">  | null
   weatherNow: WeatherCondition | null
 }
 
@@ -42,16 +42,45 @@ export const weatherSlice = createSlice({
       state.status = 'error'
       state.weatherData = initialState.weatherData
     },
-    putWeatherData: (state, action: PayloadAction<WeatherDataFromServer>) => {
-      state.status = 'idle'
-      state.weatherData = {
-        timezone:  action.payload.timezone,
-        weatherNow:  action.payload.current.weather[0],
-        weatherDetails:  action.payload.current,
-        weatherPerHour:  action.payload.hourly.slice(0, 8),
+    putWeatherData: {
+      reducer: (state, action: PayloadAction<WeatherData>) => {
+        state.status = 'idle'
+        state.weatherData = action.payload
+      },
+      prepare: (data: WeatherDataFromServer): { payload: WeatherData} =>  {
+        const { current, hourly, timezone} = data;
+        
+        const weatherPerHour = hourly.map(({ dt, temp, weather }) => ({
+          dt,
+          temp,
+          weather
+        })).slice(0, 8);
+
+        const weatherNow = current.weather[0];
+
+        const weatherDetails = {
+          sunrise: current.sunrise,
+          sunset: current.sunset,
+          dew_point: current.dew_point,
+          humidity: current.humidity,
+          wind_speed: current.wind_speed,
+          pressure: current.pressure,
+          feels_like: current.feels_like,
+          temp: current.temp,
+          visibility: current.visibility,
+        }
+
+        return {
+          payload: {
+            timezone,
+            weatherPerHour,
+            weatherNow,
+            weatherDetails
+          }
+        }
       }
     }
-   },
+  },
 })
 
 export const { putWeatherData, setWeatherError, setWeatherLoading } = weatherSlice.actions

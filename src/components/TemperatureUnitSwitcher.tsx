@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { TemperatureUnit } from "@/types"
-import { SwitcherBlock, SwitcherBtn } from "@/ui/TemperatureUnitSwitcher"
+import { TemperatureUnit } from "@/types/weather"
+import { SwitcherBlock, TemperatureUnitSwitcherBtn } from "@/ui/TemperatureUnitSwitcher"
 
 interface TemperatureUnitSwitcherProps {
   handleSwitchTemperatureUnit: (unit: TemperatureUnit) => void
@@ -10,13 +10,13 @@ interface TemperatureUnitSwitcherProps {
 export const TemperatureUnitSwitcher: FC<TemperatureUnitSwitcherProps> = ({ handleSwitchTemperatureUnit, temperatureUnit }) => {
   return (
     <SwitcherBlock>
-      <SwitcherBtn onClick={() => handleSwitchTemperatureUnit("metric")} $activeUnit={temperatureUnit === "metric"}>
+      <TemperatureUnitSwitcherBtn onClick={() => handleSwitchTemperatureUnit("metric")} $activeUnit={temperatureUnit === "metric"}>
         C
-      </SwitcherBtn>
+      </TemperatureUnitSwitcherBtn>
       /
-      <SwitcherBtn onClick={() => handleSwitchTemperatureUnit("imperial")} $activeUnit={temperatureUnit === "imperial"}>
+      <TemperatureUnitSwitcherBtn onClick={() => handleSwitchTemperatureUnit("imperial")} $activeUnit={temperatureUnit === "imperial"}>
         F
-      </SwitcherBtn>
+      </TemperatureUnitSwitcherBtn>
     </SwitcherBlock>
   )
 }

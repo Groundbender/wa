@@ -1,4 +1,4 @@
-import { PosistionCoordinates, TemperatureUnit } from "@/types"
+import { PosistionCoordinates, TemperatureUnit } from "@/types/weather";
 
 export enum WeatherActionTypes {
   FETCH_WEATHER_DATA = "weather/fetchWeatherData",

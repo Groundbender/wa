@@ -8,9 +8,8 @@ export const ThemeTogglerCheckbox = styled.input.attrs({
   position: absolute;
   
   &:checked + label  > span  {
-     left: calc(57%);
-  }
-`
+     left: 2rem;
+  }`
 
 export const ThemeTogglerLabel = styled.label.attrs({
   htmlFor: "checkbox",
@@ -25,8 +24,7 @@ export const ThemeTogglerLabel = styled.label.attrs({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none;
-`
+  user-select: none;`
 
 export const ThemeTogglerBall = styled.span`
   background-color: var(--color-secondary);
@@ -36,7 +34,4 @@ export const ThemeTogglerBall = styled.span`
   left: .125rem;
   top: .125rem;
   border-radius: 50%;
-  transition: left 0.2s linear;
-`
-
-
+  transition: left 0.2s linear;`

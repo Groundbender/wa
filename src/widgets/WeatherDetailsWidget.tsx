@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { useAppSelector } from "@/hooks/redux"
 import { DetailsList } from "@/ui/WeatherDetailsList"
 import { WeatherDetailsCard } from "@/components/WeatherDetailsCard"
-import { DetailsContent } from "@/types"
+import { WeatherDetailCard } from "@/types/weather"
 import { formatTimeUS } from "@/helpers"
 import { WeatherDetailsTitle } from "@/ui/WeatherDetailsTitle"
 import SunriseIcon from "@/assets/Sunrise.svg"
@@ -14,19 +14,17 @@ import PressureIcon from "@/assets/Pressure.svg"
 import TemperatureHighIcon from "@/assets/TemperatureHigh.svg"
 import VisibilityIcon from "@/assets/Visibility.svg"
 
-export const detailsContent: DetailsContent[] = [
+const detailsCards: WeatherDetailCard[] = [
   {
     title: "SUNRISE",
     value: "sunrise",
     icon: <SunriseIcon />,
-    measureUnit: "",
     isTimestamp: true
   },
   {
     title: "SUNSET",
     value: "sunset",
     icon: <SunsetIcon />,
-    measureUnit: "",
     isTimestamp: true
   },
   {
@@ -82,19 +80,18 @@ const WeatherDetailsContainer = styled.div`
   @media(max-width: 720px) {
     padding-bottom: 2.5rem;
     padding-top: 2.5rem;
-  }
-`
+  }`
 
 export const WeatherDetailsWidget = () => {
   const weatherDetails = useAppSelector(state => state.weather.weatherData.weatherDetails)
 
-  const weatherDetailsCards = detailsContent.map((card) => {
+  const weatherDetailsCards = detailsCards.map((card) => {
     const value = card.isTimestamp ? formatTimeUS(weatherDetails?.[card.value]) : weatherDetails?.[card.value].toString()
     return (
       <WeatherDetailsCard
         key={card.value}
-        weatherDataText={card.title}
-        weatherDataValue={value}
+        weatherDetailTitle={card.title}
+        weatherDetailValue={value}
         icon={card.icon}
         measureUnit={card.measureUnit} />
     )

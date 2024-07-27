@@ -8,13 +8,12 @@ interface SearchInputProps {
 export const SearchInput: FC<SearchInputProps> = ({ handleSearchValue }) => {
   const [value, setValue] = useState("");
 
-  const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     handleSearchValue(e.target.value)
   }
 
   return (
-    <Input onChange={handleInputValue} value={value} type="search" placeholder="E.g. Warsaw" />
+    <Input onChange={onChange} value={value} type="search" placeholder="E.g. Warsaw" />
   )
 }
-

@@ -1,8 +1,14 @@
-import { PosistionCoordinates } from "@/types";
+import { PosistionCoordinates } from "@/types/weather";
 import { useEffect, useMemo, useState } from "react";
+import toast from "react-hot-toast";
+
+const defaultPosition: PosistionCoordinates = {
+  lat: 55,
+  lng: 49,
+}
 
 export const useGeolocation = () =>  {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [position, setPosition] = useState<PosistionCoordinates | null>(null);
 
@@ -22,8 +28,10 @@ export const useGeolocation = () =>  {
         setIsLoading(false);
       },
       (error) => {
-        if (error instanceof Error) {
+        if (error) {
           setError(error.message);
+          toast.error("Allow location access to get weather data! \n Current position is Moscow, Russia by default.");
+          setPosition(defaultPosition)
         }
         setIsLoading(false);
       }
