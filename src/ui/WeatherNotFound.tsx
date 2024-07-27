@@ -21,7 +21,7 @@ const NotFoundImage = styled(Image)`
   }`
 
 const NotFoundText = styled(Text)`
-    margin-bottom: .625rem;`
+    margin-bottom: 10px;`
 
 export const WeatherNotFound = () => {
   return (

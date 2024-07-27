@@ -4,25 +4,25 @@ import { Image } from "./Image";
 export const StyledWeatherPerHourItem = styled.li`
   display: flex;
   flex-direction: column;
-  gap: .9375rem; 
+  gap: 15px; 
   align-items: center;
   color: var(--primary-color);`
 
 export const WeatherPerHourCard = styled.div<{ $now?: boolean }>`
   background-color: var(--weather-item-bg);
   height: 7.5rem;
-  padding: 0 .9375rem;
+  padding: 1rem;
   border-radius: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
+  gap: 8px;
   background-color: ${props => props.$now ? "var(--primary-color-muted)" : "var(--weather-item-bg)"};
   color: ${props => props.$now ? "var(--primary-color)" : "var(--primary-color-muted)"};
   
   @media (max-width: 1060px) {
-   padding: 0 .625rem;
+   padding: 0 10px;
    height: 6.5rem;
 }
 

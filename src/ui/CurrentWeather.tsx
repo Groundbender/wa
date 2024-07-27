@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CurrentWeatherContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.875rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
 
@@ -27,7 +27,7 @@ export const DateBlock = styled.div`
 export const DateTextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: .4375rem;
+  gap: 7px;
   color: var(--primary-color);
   font-size: var(--font-size-25);
   align-items: center;`
@@ -44,12 +44,12 @@ export const GeolocationBlock = styled.div`
 
   svg {
     display: inline-block;
-    margin-right: .625rem;
+    margin-right: 10px;
     fill: var(--primary-color)
   }
 
   @media(max-width: 1060px) {
     svg {
-      margin-right: .3125rem;
+      margin-right: 5px;
     }
   }`

@@ -1,14 +1,14 @@
 import styled from "styled-components"
 
 export const SwitcherBlock = styled.div`
-  width: 10.1875rem;
-  height: 2.375rem;
+  width: 10rem;
+  height: 2rem;
   border-radius: 20px;
   background: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
+  gap: 8px;
 
   @media(max-width: 580px) {
     width: 8rem;

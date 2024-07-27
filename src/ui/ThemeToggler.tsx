@@ -31,7 +31,7 @@ export const ThemeTogglerBall = styled.span`
   width: 1.375rem;
   height: 1.375rem;
   position: absolute;
-  left: .125rem;
-  top: .125rem;
+  left: 2px;
+  top: 2px;
   border-radius: 50%;
   transition: left 0.2s linear;`
