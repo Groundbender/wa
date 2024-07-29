@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import normalize from "./normalize.css"
 export const GlobalStyles = createGlobalStyle`
   ${normalize}
+  
   :root {
   &.light-mode {
     --bg-color: transparent linear-gradient(180deg, #20d1bc 0%, #1aade3 100%) 0%
@@ -37,18 +38,12 @@ export const GlobalStyles = createGlobalStyle`
   --font-weight-bold: bold;
   --line-height: 100%;
 
-  --font-size-12: 0.75rem;
   --font-size-15: clamp(0.625rem, 0.5492rem + 0.3236vw, 0.9375rem);
   --font-size-16: 1rem;
-  --font-size-18: 1.125rem;
   --font-size-19: clamp(0.875rem, 0.7992rem + 0.3236vw, 1.1875rem);
-  --font-size-21: 1.3125rem;
-  --font-size-22: 1.375rem;
   --font-size-25: clamp(0.9375rem, 0.693rem + 0.7767vw, 1.5625rem);
   --font-size-26: clamp(var(--font-size-16), 0.693rem + 0.7767vw, 1.625rem);
   --font-size-34: clamp(1rem, 0.7269rem + 1.165vw, 2.125rem);
-  --font-size-35: 2.1875rem;
-  --font-size-50: 3.125rem;
   --font-size-90: clamp(3.125rem, 2.5182rem + 2.589vw, 5.625rem);
 
   --text-uppercase: uppercase;
