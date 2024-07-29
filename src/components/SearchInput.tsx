@@ -14,6 +14,6 @@ export const SearchInput: FC<SearchInputProps> = ({ handleSearchValue }) => {
   }
 
   return (
-    <Input onChange={onChange} value={value} type="search" placeholder="E.g. Warsaw" />
+    <Input onChange={onChange} value={value} type="text" placeholder="E.g. Warsaw" />
   )
 }

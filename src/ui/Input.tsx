@@ -15,11 +15,6 @@ export const StyledInput = styled.input`
   padding: 0 25px 0 10px; 
   font-size: var(--font-size-16);
 
-  &::-webkit-search-cancel-button {
-      -webkit-appearance: none;
-      display: none;
-    }
-    
   &::placeholder {
     color: var(--primary-color);
   }`
@@ -33,7 +28,7 @@ export const InputContainer = styled.div<InputProps>`
     width: 50%;
   }
   
-  ${({ type }) => type === "search" && css`
+  ${({ type }) => type === "text" && css`
     position: relative;
     
     svg {
