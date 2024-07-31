@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface WeatherData {
   timezone: string
-  weatherPerHour: WeatherPerHour[] | null
+  weatherPerHour: WeatherPerHour[]
   weatherDetails: Omit<CurrentWeather, "weather">  | null
   weatherNow: WeatherCondition | null
 }
@@ -24,7 +24,7 @@ export interface WeatherInitialState {
 const initialState: WeatherInitialState = {
   weatherData: {
     timezone: '',
-    weatherPerHour: null,
+    weatherPerHour: [],
     weatherDetails: null,
     weatherNow: null
   },

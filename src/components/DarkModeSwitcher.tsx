@@ -1,4 +1,4 @@
-import { ThemeTogglerBall, ThemeTogglerCheckbox, ThemeTogglerLabel } from "@/ui/ThemeToggler"
+import { ThemeSwitcherBall, ThemeSwitcherCheckbox, ThemeSwitcherLabel } from "@/ui/ThemeSwitcher"
 import { Text } from "@/ui/Text"
 import { useDarkMode } from "@/hooks/useDarkMode";
 
@@ -7,12 +7,12 @@ export const DarkModeSwitcher = () => {
 
   return (
     <>
-      <ThemeTogglerCheckbox checked={isDarkMode} onChange={toggleDarkMode} />
-      <ThemeTogglerLabel >
+      <ThemeSwitcherCheckbox checked={isDarkMode} onChange={toggleDarkMode} />
+      <ThemeSwitcherLabel >
         <Text>🌚</Text>
         <Text>🌞</Text>
-        <ThemeTogglerBall />
-      </ThemeTogglerLabel>
+        <ThemeSwitcherBall />
+      </ThemeSwitcherLabel>
     </>
   )
 }

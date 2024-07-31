@@ -14,7 +14,7 @@ export function* workerFetchWeatherData(action: PayloadAction<WeatherWorkersPayl
     yield put(setWeatherLoading());
     const { data } = yield call(
       fetchWeatherData,
-     `onecall?lat=${position.lat}&lon=${position.lng}&units=${temperatureUnit}&appid=${API_KEY}`
+     `onecall?lat=${position.lat}&lon=${position.lng}&units=${temperatureUnit}`
     );
     yield put(putWeatherData(data));
   } catch (error) {

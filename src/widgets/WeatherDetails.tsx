@@ -82,7 +82,7 @@ const WeatherDetailsContainer = styled.div`
     padding-top: 2.5rem;
   }`
 
-export const WeatherDetailsWidget = () => {
+export const WeatherDetails = () => {
   const weatherDetails = useAppSelector(state => state.weather.weatherData.weatherDetails)
 
   const weatherDetailsCards = detailsCards.map((card) => {

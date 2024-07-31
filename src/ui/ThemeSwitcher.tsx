@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ThemeTogglerCheckbox = styled.input.attrs({
+export const ThemeSwitcherCheckbox = styled.input.attrs({
   type: "checkbox",
   id: "checkbox",
 })`
@@ -11,7 +11,7 @@ export const ThemeTogglerCheckbox = styled.input.attrs({
      left: 2rem;
   }`
 
-export const ThemeTogglerLabel = styled.label.attrs({
+export const ThemeSwitcherLabel = styled.label.attrs({
   htmlFor: "checkbox",
 })`
   background-color: var(--primary-color);
@@ -26,7 +26,7 @@ export const ThemeTogglerLabel = styled.label.attrs({
   align-items: center;
   user-select: none;`
 
-export const ThemeTogglerBall = styled.span`
+export const ThemeSwitcherBall = styled.span`
   background-color: var(--color-secondary);
   width: 1.375rem;
   height: 1.375rem;

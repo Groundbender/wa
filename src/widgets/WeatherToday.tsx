@@ -20,7 +20,7 @@ const WeatherTodayContainer = styled.div`
     padding-bottom: 3rem;
   }`
 
-export const WeatherTodayWidget = () => {
+export const WeatherToday = () => {
   const timezone = useAppSelector(state => state.weather.weatherData?.timezone)
   const temperature = useAppSelector(state => state.weather.weatherData?.weatherDetails?.temp)
   const weatherPerHour = useAppSelector(state => state.weather.weatherData?.weatherPerHour)

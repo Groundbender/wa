@@ -31,5 +31,4 @@ export const WeatherPerHourCard = styled.div<{ $now?: boolean }>`
 }`
 
 export const WeatherPerHourIcon = styled(Image)`
-  width: var(--icon-size-sm);
-  aspect-ratio: 1;`
+  width: var(--icon-size-sm);`

@@ -8,7 +8,7 @@ export const StyledInput = styled.input`
   background: inherit;
   border: none;
   outline: none;
-  border-bottom: 1px solid var( --primary-color);
+  border-bottom: 1px solid var(--primary-color);
   color: var(--primary-color);
   display: inline-block;
   position: relative;

@@ -15,7 +15,7 @@ export function* workerFetchWeatherDataBySearch(action: PayloadAction<WeatherWor
     yield put(setWeatherLoading());
     const { data } = yield call(
       fetchWeatherData,
-      `weather?q=${location}&units=${temperatureUnit}&appid=${API_KEY}`
+      `weather?q=${location}&units=${temperatureUnit}`
     );
 
     const lat = data.coord.lat;
@@ -23,7 +23,7 @@ export function* workerFetchWeatherDataBySearch(action: PayloadAction<WeatherWor
 
     const weatherDataCall: AxiosResponse = yield call(
       fetchWeatherData,
-      `onecall?lat=${lat}&lon=${lon}&units=${temperatureUnit}&appid=${API_KEY}`
+      `onecall?lat=${lat}&lon=${lon}&units=${temperatureUnit}`
     );
 
     yield put(putWeatherData(weatherDataCall.data));

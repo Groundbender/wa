@@ -21,7 +21,7 @@ const SwitchersContainer = styled.div`
   align-items: center;
   gap: 1.25rem;`
 
-export const HeaderWidget: FC<HeaderWidgetProps> = ({ temperatureUnit, setTemperatureUnit, currentPosition, setSearchValue, debouncedValue }) => {
+export const Header: FC<HeaderWidgetProps> = ({ temperatureUnit, setTemperatureUnit, currentPosition, setSearchValue, debouncedValue }) => {
   const dispatch = useDispatch();
 
   const handleSwitchTemperatureUnit = useCallback((unit: TemperatureUnit) => {

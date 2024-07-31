@@ -4,9 +4,9 @@ import { useAppSelector, useDebounce, useGeolocation } from "./hooks"
 import { fetchWeatherDataAction } from "./store/sagas/workerFetchWeatherData"
 import { WeatherLoader } from "./ui/WeatherLoader"
 import { ThemeProvider } from "./context/themeContext/ThemeProvider"
-import { HeaderWidget } from "./widgets/HeaderWidget"
-import { WeatherDetailsWidget } from "./widgets/WeatherDetailsWidget"
-import { WeatherTodayWidget } from "./widgets/WeatherTodayWidget"
+import { Header } from "./widgets/Header"
+import { WeatherDetails } from "./widgets/WeatherDetails"
+import { WeatherToday } from "./widgets/WeatherToday"
 import { Divider } from "./ui/Divider"
 import { PageWrapper } from "./ui/PageWrapper"
 import { Container } from "./ui/Container"
@@ -41,7 +41,7 @@ const App = () => {
       <GlobalStyles />
       <PageWrapper>
         <Container>
-          <HeaderWidget
+          <Header
             debouncedValue={debouncedValue}
             setSearchValue={setSearchValue}
             currentPosition={currentPosition}
@@ -51,9 +51,9 @@ const App = () => {
           {status === "loading" && <WeatherLoader />}
           {status === "idle" &&
             <>
-              <WeatherTodayWidget />
+              <WeatherToday />
               <Divider />
-              <WeatherDetailsWidget />
+              <WeatherDetails />
             </>}
         </Container>
       </PageWrapper>
